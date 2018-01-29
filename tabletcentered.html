@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Alien Picnics</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script> 
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="spriteData.js"></script>
+    <!-- Include library [mmturkey][mmturkey], which manages submitting data to Mechanical Turk. This defines a global object, <code>turk</code>, and attaches five properties to it, <code>hitId</code>, <code>assignmentId</code>, <code>workerId</code>, <code>previewMode</code>, and <code>turkSubmitTo</code>. It also provides a single method, <code>submit(data)</code>, which you use to submit data to Turk. If no submission URL has been provided (because, e.g. you're testing your code outside of the Turk environment), <code>submit</code> displays what would have been submitted (without, obviously, any Turk-specific variables like <code>workerId</code> and <code>assignmentId</code>).  -->
+    <!-- [mmturkey]: http://github.com/longouyang/mmturkey -->
+    <script src="mmturkey-0.6.js"></script>
+    <link rel="stylesheet" href="stylecentered.css" />
+    <meta name="viewport" content="initial-scale=1.0" /> 
+     <!--<meta name="viewport" content="width=device-width">  -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+  </head>
+  <body>
+ 
+  <div class="slide" id="training"></div>
+
+  <div class="slide" id="prestudy">
+        <br><br><br><br>
+        <p class="block-text">On planet Zorg, aliens like to have gatherings much like human picnics. When they do, they each bring an object to the gathering to share. They always like to have a well-rounded meal.</p> 
+        <p class="block-text"> In this task, it is your job to observe what the aliens bring to their gatherings to make good meals. You will see a series of gatherings in which aliens bring different objects, and then you'll be asked questions about them.</p>
+        <center><button type="button" onClick="this.blur(); experiment.preStudy()">Begin</button></center>
+  </div>
+
+  <div class="slide" id="stage">
+      <div id="blanket"> </div>
+      <div id="instructions"> </div>
+      <div id="objects"> </div> <!--dynamically built in javascript-->
+      <div id="aliens"> </div>
+      <div id="target"> </div>
+      <div id="options"> </div>
+      <center><button type="button" id="advancebutton">Next</button></center>
+      
+
+  </div>
+
+  <div class="slide" id="filler">
+      <div id="filler"> </div> <!--dynamically built in javascript-->
+  </div>
+
+  <div class="slide" id="testinstructions">
+        <br><br><br><br>
+        <p class="block-text">You have finished your observations of alien picnics. Now you will show what you learned about objects on planet Zorg.</p> 
+        <p class="block-text"> In the next portion, one object will appear at the top of the screen and two options will appear at the bottom. Your task is to choose which of the two objects at the bottom is more similar to the object at the top, and then advance to the next question.</p>
+        <center><button type="button" onClick="this.blur(); experiment.next()">Continue</button></center>
+  </div>
+
+  <div class="slide" id="finished">
+  </div>
+
+    
+  <script src="tabletcentered.js"></script>
+    
+  </body>
+</html>
