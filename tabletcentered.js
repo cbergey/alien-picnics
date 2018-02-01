@@ -432,8 +432,10 @@ var experiment = {
 	    $("#instructions").html("The five alien objects you will learn about are shown below. Take a moment to take note of these objects.");
 	    $("#instructions").show();
 		$("#objects").html(objects_html); 
+		clickDisabled = true;
+		$("#advancebutton").attr('disabled',true);
 		$("#stage").fadeIn();
-
+		setTimeout(function() {clickDisabled = false; $( "#advancebutton" ).attr('disabled', false);}, 3000);
 		// get time for rt
 		experiment.starttime = Date.now();
 	},
